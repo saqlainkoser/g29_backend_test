@@ -21,6 +21,8 @@ app.post('/api/greet', (req, res) => {
   res.json({ message: `Hello, ${name}! Welcome to our app.` });
 });
 
-app.listen(process.env.PORT, () => {
+const PORT = process.env.PORT ;
+
+app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
