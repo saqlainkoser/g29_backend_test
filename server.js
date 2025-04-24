@@ -2,7 +2,9 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const PORT = 5005;
+const dotenv = require('dotenv');
+dotenv.config();
+
 
 // Middleware
 app.use(cors());
@@ -19,6 +21,6 @@ app.post('/api/greet', (req, res) => {
   res.json({ message: `Hello, ${name}! Welcome to our app.` });
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
